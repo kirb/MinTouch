@@ -1,0 +1,63 @@
+body{
+	font:12pt "Helvetica Neue",HelveticaNeue,Helvetica,Arial,sans-serif;
+}
+
+body>#account{
+	background:black;color:white;font-weight:bold;
+}
+
+body>#account a{
+	color:white!important;
+}
+
+section>header,section>footer,aside>header,aside>footer{
+	border-top:1px solid white;border-bottom:1px solid #797F90;
+	background:#F4F5F7;background:#F4F5F7 -webkit-gradient(linear,0 0,0 100%,from(#F4F5F7),to(#A8ACB9));background:#F4F5F7 -moz-linear-gradient(#F4F5F7,#A8ACB9);background:#F4F5F7 -o-linear-gradient(#F4F5F7,#A8ACB9);background:#F4F5F7 linear-gradient(#F4F5F7,#A8ACB9);-pie-background:#F4F5F7 linear-gradient(#F4F5F7,#A8ACB9);
+}
+
+section>article>div,aside>article>div{
+	padding:8px;
+	background:#EFEFEF;background:#EFEFEF -webkit-gradient(linear,0 0,0 100%,from(#EFEFEF),to(#E0E0E0));background:#EFEFEF -moz-linear-gradient(#EFEFEF,#E0E0E0);background:#EFEFEF -o-linear-gradient(#EFEFEF,#E0E0E0);background:#EFEFEF linear-gradient(#EFEFEF,#E0E0E0);-pie-background:#EFEFEF linear-gradient(#EFEFEF,#E0E0E0);
+}
+
+h1,h2{
+	border-width:0!important;margin:0!important;padding:0!important;
+}
+
+header h1,footer{
+	color:#717880;font-size:18px;line-height:42px;text-align:center;text-shadow:0 1px 0 #E1E3E8;
+}
+
+button,a[data-type*=button]{
+	border-radius:5px;font-size:18px;border:1px solid #4C4E50;height:23px;line-height:23px;color:white!important;font-size:12px;text-shadow:0 -1px #62666A;margin:7px;padding:2px 5px;text-decoration:none;
+	background:#B1B5BB -webkit-gradient(linear,0 0,0 100%,from(#B1B5BB),to(#6B737E));background:#B1B5BB -moz-linear-gradient(#B1B5BB,#6B737E);background:#B1B5BB -o-linear-gradient(#B1B5BB,#6B737E);background:#B1B5BB linear-gradient(#B1B5BB,#6B737E);-pie-background:#B1B5BB linear-gradient(#B1B5BB,#6B737E);
+}
+
+button:active,a[data-type*=button]:active,button.over,a[data-type*=button].over{
+	background:#878A8E -webkit-gradient(linear,0 0,0 100%,from(#878A8E),to(#525860));background:#878A8E -moz-linear-gradient(#878A8E,#525860);background:#878A8E -o-linear-gradient(#878A8E,#525860);background:#878A8E linear-gradient(#878A8E,#525860);-pie-background:#878A8E linear-gradient(#878A8E,#525860);
+}
+
+ul[data-type*=rounded]{
+	margin:0;padding:0;list-style:none;list-style-image:none;border:1px solid #ccc;border-radius:8px;-moz-border-radius:8px;background:white;
+}
+
+ul[data-type*=rounded] li{
+	border:1px solid #ccc;
+}
+
+ul[data-type*=rounded] li:first-child,ul[data-type*=rounded] li:first-child a{
+	border-top-left-radius:8px;border-top-right-radius:8px;-moz-border-topleft-radius:8px;-moz-border-topright-radius:8px;
+}
+
+ul[data-type*=rounded] li:last-child,ul[data-type*=rounded] li:last-child a{
+	border-bottom-left-radius:8px;border-bottom-right-radius:8px;-moz-border-bottomleft-radius:8px;-moz-border-bottomright-radius:8px;
+}
+
+ul[data-type*=rounded] a,ul[data-type*=rounded] button{
+	display:block;width:99.99%;background:white;border-width:0;background:transparent;text-align:left;margin:0;color:black!important;
+	border-radius:0;-moz-border-radius:0;
+}
+
+ul[data-type*=rounded] a:hover,ul[data-type*=rounded] button:hover,ul[data-type*=rounded] a.over,ul[data-type*=rounded] button.over{
+	background:#878A8E;color:white;
+}

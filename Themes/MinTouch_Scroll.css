@@ -1,0 +1,26 @@
+@media only screen and (min-width:800px){
+	.iscroll section,.iscroll aside{
+		position:absolute;top:0;left:0;height:100%;
+	}
+	.iscroll section>article>div,.iscroll aside>article>div{
+		position:absolute;top:48px;bottom:48px;right:0;overflow:auto;
+	}
+	.iscroll section>article>div>div,.iscroll aside>article>div>div{
+		position:absolute;top:0;left:0;right:0;bottom:0;overflow:auto;
+	}
+	.iscroll aside>article>div{
+		left:0;
+	}
+	.iscroll section>article>div{
+		left:300px;
+	}
+	.iscroll section>article{
+		right:auto;
+	}
+	.iscroll section>footer,.iscroll aside>footer{
+		position:absolute;bottom:0;left:0;right:0;overflow:auto;
+	}
+	.iscroll aside>footer{
+		right:auto;width:100%;
+	}
+}
