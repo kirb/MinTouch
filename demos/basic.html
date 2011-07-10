@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MinTouch Test</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://kirbylover4000.github.com/js/iscroll-lite.js"></script>
+    <script src="http://kirbylover4000.github.com/demos/MinTouch/MinTouch.js"></script>
+    <script>
+        var mypage = MinTouch({
+            themeDir: "http://kirbylover4000.github.com/demos/MinTouch/themes/"
+        });
+    </script>
+</head>
+<body>
+    <section id="mainwindow">
+        <header>
+            <h1>Page 1</h1>
+            <a href="#page2" data-type="button" data-position="right">Page 2</a>
+        </header>
+        <article>
+            <p>If this page looks like an app, congratulations, you have made your first page with MinTouch. Try the page 2 button above!</p>
+        </article>
+    </section>
+    <section id="page2">
+        <header>
+            <h1>Page 2</h1>
+            <a href="#mainwindow" data-type="back button" data-position="left">Back</a>
+        </header>
+        <article>
+            <p>And this is page 2. Click the back button above to return to the first page.</p>
+        </article>
+    </section>
+</body>
+</html>
