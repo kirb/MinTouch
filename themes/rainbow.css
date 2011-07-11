@@ -1,0 +1,62 @@
+/**
+ * @todo Fix gradients to work with more than WebKit
+ */
+html,body,section,header,article,footer,p,img,h1,h2,h3,h4,h5,h6{
+    margin:0;padding:0;
+}
+body{
+    font:14px "Droid Sans",sans-serif;
+}
+button,a[data-type*=button]{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+button>span,a[data-type*=button]>span{
+    position:relative;z-index:2;
+}
+section{
+    position:absolute;top:0;left:0;width:100%;
+}
+section>header{
+    height:48px;text-align:center;overflow:hidden;
+    background:-webkit-gradient(linear,left top,left bottom,from(#bde),to(#cde),color-stop(20%,#6996ff),color-stop(40%,#7998ff),color-stop(60%,#8997ff),color-stop(80%,#9669ff));
+    -webkit-user-select:none;-webkit-touch-callout:none;
+}
+section>header>h1{
+    line-height:48px;font-size:35px;
+}
+section>header>a[data-type*=button],section>header>button{
+    padding:10px;color:black;text-decoration:none;
+    margin:5px 10px 0 10px;height:15px;
+    border-radius:10px;-moz-border-radius:10px;
+    background:-webkit-gradient(linear,left top,left bottom,from(#69dbff),to(#96dbcc));
+}
+section>header>a[data-type*=button]:hover,section>header>button:hover,
+section>header>a[data-type*=button].over,section>header>button.over{
+    background:-webkit-gradient(linear,left top,left bottom,from(#96dbcc),to(#69dbff));
+}
+section>header>a[data-type*=back]:before,section>header>button[data-type*=back]:before{
+    content:" ";width:25px;height:25px;position:absolute;
+    left:5px;top:10px;z-index:1;border-radius:5px;
+    -moz-border-radius:5px;
+    background:-webkit-gradient(linear,left top,right bottom,from(#69dbff),to(#96dbcc));
+    -webkit-transform:rotate(45deg);
+}
+section>header>a[data-type*=back]:hover:before,section>header>button[data-type*=back]:hover:before,
+section>header>a[data-type*=back].over:before,section>header>button[data-type*=back].over:before{
+    background:-webkit-gradient(linear,left top,right bottom,from(#96dbcc),to(#69dbff));
+}
+section>header>a[data-type*=next]:before,section>header>button[data-type*=next]:before{
+    content:" ";width:25px;height:25px;position:absolute;
+    right:5px;top:10px;z-index:1;border-radius:5px;
+    -moz-border-radius:5px;
+    background:-webkit-gradient(linear,left top,right bottom,from(#69dbff),to(#96dbcc));
+    -webkit-transform:rotate(45deg);
+}
+section>header>a[data-type*=next]:hover:before,section>header>button[data-type*=next]:hover:before,
+section>header>a[data-type*=next].over:before,section>header>button[data-type*=next].over:before{
+    background:-webkit-gradient(linear,left top,right bottom,from(#96dbcc),to(#69dbff));
+}
+section>footer{
+    text-align:center;padding:5px 0;
+    background:-webkit-gradient(linear,left top,left bottom,from(#cde),to(#bde),color-stop(20%,#9669ff),color-stop(40%,#8997ff),color-stop(60%,#7998ff),color-stop(80%,#6996ff));
+}

@@ -72,17 +72,11 @@ section>header>*,section>footer>*,aside>header>*,aside>footer>*{
 		width:100%;
 		height:100%;
 	}
-	body>section{
-		position:relative;
-		z-index:2;
-	}
 	body>section>header,body>section>article,body>section>footer{
 		margin-left:300px;
 	}
 	body>aside{
 		width:300px;
-		position:relative;
-		z-index:1;
 	}
 	body>aside,body>aside>div{
 		left:0;
