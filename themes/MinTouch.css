@@ -20,6 +20,9 @@
 [data-align=justify]{
 	text-align:justify;
 }
+table[data-border=true],table[data-border=true] tr,table[data-border=true] td,table[data-border=true] th{
+	border:1px solid black;
+}
 #account{
 	position:fixed;top:0;left:0;width:100%;line-height:16px;text-align:right;font-size:14px;margin:0;padding:0;list-style:none;list-style-image:none;-webkit-user-select:none;-webkit-touch-callout:none;
 }
