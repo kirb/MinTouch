@@ -57,7 +57,7 @@ ul[data-type*=rounded] li:last-child,ul[data-type*=rounded] li:last-child a{
 }
 
 ul[data-type*=rounded] a,ul[data-type*=rounded] button{
-	display:block;width:99.99%;background:white;border-width:0;background:transparent;text-align:left;margin:0;color:black!important;
+	display:block;background:white;border-width:0;background:transparent;text-align:left;margin:0;color:black!important;
 	border-radius:0;-moz-border-radius:0;
 }
 
