@@ -88,7 +88,7 @@
 					}catch(e){}
 				});
 				this.params=/(.*),(.*)/.test(location.hash)?location.hash.replace(/(.*),(.*)/,"$2"):"";
-				$(locationhash).slideDown().trigger("MinTouch_open");
+				$(locationhash).show().trigger("MinTouch_open");
 				setInterval(function(){
 					var hash=location.hash.replace(/(.*),(.*)/,"$1"),params=/(.*),(.*)/.test(location.hash)?location.hash.replace(/(.*),(.*)/,"$2"):"";
 					if(hash!=locationhash){

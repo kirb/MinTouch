@@ -10,6 +10,10 @@ body>#account a{
 	color:white!important;
 }
 
+body>section,body>aside{
+	background:#EFEFEF;background:#EFEFEF -webkit-gradient(linear,0 0,0 100%,from(#EFEFEF),to(#E0E0E0));background:#EFEFEF -moz-linear-gradient(#EFEFEF,#E0E0E0);background:#EFEFEF -o-linear-gradient(#EFEFEF,#E0E0E0);background:#EFEFEF linear-gradient(#EFEFEF,#E0E0E0);-pie-background:#EFEFEF linear-gradient(#EFEFEF,#E0E0E0);
+}
+
 section>header,section>footer,aside>header,aside>footer{
 	border-top:1px solid white;border-bottom:1px solid #797F90;
 	background:#F4F5F7;background:#F4F5F7 -webkit-gradient(linear,0 0,0 100%,from(#F4F5F7),to(#A8ACB9));background:#F4F5F7 -moz-linear-gradient(#F4F5F7,#A8ACB9);background:#F4F5F7 -o-linear-gradient(#F4F5F7,#A8ACB9);background:#F4F5F7 linear-gradient(#F4F5F7,#A8ACB9);-pie-background:#F4F5F7 linear-gradient(#F4F5F7,#A8ACB9);
@@ -17,7 +21,6 @@ section>header,section>footer,aside>header,aside>footer{
 
 section>article>div,aside>article>div{
 	padding:8px;
-	background:#EFEFEF;background:#EFEFEF -webkit-gradient(linear,0 0,0 100%,from(#EFEFEF),to(#E0E0E0));background:#EFEFEF -moz-linear-gradient(#EFEFEF,#E0E0E0);background:#EFEFEF -o-linear-gradient(#EFEFEF,#E0E0E0);background:#EFEFEF linear-gradient(#EFEFEF,#E0E0E0);-pie-background:#EFEFEF linear-gradient(#EFEFEF,#E0E0E0);
 }
 
 h1,h2{

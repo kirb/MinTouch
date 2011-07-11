@@ -10,7 +10,7 @@
 	font-style:normal;
 	src:local("TitilliumMaps29L"),local("TitilliumMaps29L"),url(TitilliumMaps29L003.otf);
 }
-body{
+html,body{
 	font:14px TitilliumText22L,sans-serif;background:#eee;background:#eee -webkit-gradient(linear,left top,left bottom,from(#ccc),color-stop(0.5,#fff),to(#ccc));background:#eee -o-linear-gradient(#ccc,#fff,#ccc);background:#eee -moz-linear-gradient(#ccc,#fff,#ccc);background:#eee linear-gradient(#ccc,#fff,#ccc);-pie-background:#eee linear-gradient(#ccc,#fff,#ccc);
 }
 h1,h2,h3,h4,h5,h6{

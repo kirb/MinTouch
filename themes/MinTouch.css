@@ -27,7 +27,7 @@
 	display:inline;padding:0 5px;
 }
 body>section,body>aside{
-	position:relative;width:100%;margin-top:14px;display:block;
+	position:relative;width:100%;margin-top:16px;display:block;
 }
 body>section{
 	z-index:1;
@@ -71,29 +71,18 @@ section>header>*,section>footer>*,aside>header>*,aside>footer>*{
 	body{
 		width:100%;
 		height:100%;
-		display:-webkit-box;
-		display:-moz-box;
-		display:-ms-box;
-		display:-o-box;
-		display:box;
-		-webkit-box-orient:horizontal;
-		-moz-box-orient:horizontal;
-		-ms-box-orient:horizontal;
-		-o-box-orient:horizontal;
-		box-orient:horizontal;
 	}
 	body>section{
-		-webkit-box-flex:1;
-		-moz-box-flex:1;
-		-ms-box-flex:1;
-		-o-box-flex:1;
-		box-flex:1;
+		position:relative;
+		z-index:2;
 	}
 	body>section>header,body>section>article,body>section>footer{
 		margin-left:300px;
 	}
 	body>aside{
 		width:300px;
+		position:relative;
+		z-index:1;
 	}
 	body>aside,body>aside>div{
 		left:0;
