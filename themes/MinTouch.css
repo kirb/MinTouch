@@ -46,11 +46,6 @@ body>aside{
 }
 body>section>article>div>div,body>aside>article>div>div{
 	padding:8px;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	-ms-box-sizing:border-box;
-	-o-box-sizing:border-box;
-	box-sizing:border-box;
 }
 body>section>header,body>section>article,body>section>footer{
 	margin-left:0;
