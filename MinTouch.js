@@ -1,4 +1,4 @@
-/**
+/*!
  * MinTouch
  *
  * A mobile web library
@@ -8,23 +8,6 @@
  * @license Creative Commons Attribution-ShareAlike 3.0 Unported - http://creativecommons.org/licenses/by-sa/3.0/
  */
 (function($){
-	function isIE(){
-		if(typeof document.all!="undefined"){
-			if(typeof document.getElementById!="undefined"){
-				var browser=navigator.userAgent.toLowerCase().replace(/.*ms(ie[\/ ][^ $]+).*/,"$1").replace(/ /,"");
-				if(typeof document.uniqueID!="undefined"){
-					if(browser.indexOf("5.5")!=-1){
-						return browser.replace(/(.*5\.5).*/,"$1");
-					}else{
-						return browser.replace(/(.*)\..*/,"$1");
-					}
-				}else{
-					return "ie5mac";
-				}
-			}
-			return false;
-		}
-	}
 	if(typeof $=="undefined"||typeof jQuery=="undefined"){
 		document.body.innerHTML="Please load jQuery before MinTouch!";
 	}else{
@@ -51,6 +34,8 @@
 				$("<link rel=stylesheet data-mintouchcss=true>").attr("href",escape(options.themeDir)+"MinTouch.css"+(options.debug?"?_="+new Date().getTime():"")).prependTo("head");
 			}
 			if(options.fullViewport){
+				$("<meta name=viewport content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0'>").prependTo("head");
+				/*
 				$("<meta name=viewport content='width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=0'>").prependTo("head");
 				$(window).bind("orientationchange",function(){
 					if("orientation" in window&&(orientation==90||orientation==-90)){
@@ -59,8 +44,24 @@
 						$("meta[name=viewport]").attr("content","width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=0");
 					}
 				});
+				*/
 			}
 			var _that=this;
+			this._scrollfix=function(e){
+				try{
+					var t=e.target;
+					while(t.nodeType!=1){
+						t=t.parentNode;
+					}
+					var n=target.tagName.toLowerCase();
+					if(n=="select"||n=="input"||n=="textarea"||n=="keygen"){
+						e.preventDefault();
+						return false;
+					}
+				}catch(e){
+					return true;
+				}
+			};
 			$(function(){
 				var locationhash=options.home.replace(/(.*),(.*)/,"$1"),hash=location.hash.replace(/(.*),(.*)/,"$1");
 				$("section>header,aside>header").each(function(){
@@ -82,15 +83,21 @@
 						scrollTo(0,"standalone" in navigator&&navigator.standalone?36:16);
 						e.preventDefault();
 						return false;
-					});
+					}).trigger("touchmove");
 				}
 				var theaside=$("body>aside:visible").find("article>div");
 				if(theaside.length==1){
-					this._asideScroller=new iScroll(theaside[0],{checkDOMChanges:false});
+					this._asideScroller=new iScroll(theaside[0],{
+						checkDOMChanges:false,
+						onBeforeScrollStart:_that._scrollfix
+					});
 				}
 				$("section,aside").bind("MinTouch_open",function(){
 					try{
-						_that._sectionScroller=new iScroll($(this).find("article>div")[0],{checkDOMChanges:false});
+						_that._sectionScroller=new iScroll($(this).find("article>div")[0],{
+							checkDOMChanges:false,
+							onBeforeScrollStart:_that._scrollfix
+						});
 					}catch(e){}
 				}).bind("MinTouch_close",function(){
 					try{
@@ -103,7 +110,7 @@
 					var hash=location.hash.replace(/(.*),(.*)/,"$1"),params=/(.*),(.*)/.test(location.hash)?location.hash.replace(/(.*),(.*)/,"$2"):"";
 					if(hash!=locationhash){
 						locationhash=hash;
-						if($(locationhash).is("section:hidden")){
+						if($(locationhash).is("section")&&$(locationhash).parent().is("body")){
 							_that.params=params;
 							$("section").slideUp().trigger("MinTouch_close");
 							$(locationhash).slideDown().trigger("MinTouch_open");
@@ -121,12 +128,9 @@
 				}).bind("touchend",function(){
 					$(this).removeClass("over");
 				});
-				$("section *,aside *").bind("mouseup touchstart",function(){
-					$(this).focus();
-				});
 				$("a[data-type*=button],button").prepend("<span></span>").wrapInner("<span></span>");
 			});
-			return this;
+			return true;
 		};
 	}
 })(jQuery);

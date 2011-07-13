@@ -1,3 +1,9 @@
+body{
+	user-select:none;
+	-webkit-user-select:none;
+	-webkit-touch-callout:none;
+	-webkit-touch-highlight-color:transparent;
+}
 [data-position=left]{
 	float:left;
 	clear:right;

@@ -62,5 +62,5 @@ ul[data-type*=rounded] a,ul[data-type*=rounded] button{
 }
 
 ul[data-type*=rounded] a:hover,ul[data-type*=rounded] button:hover,ul[data-type*=rounded] a.over,ul[data-type*=rounded] button.over{
-	background:#878A8E;color:white;
+	background:#878A8E;color:white!important;
 }
