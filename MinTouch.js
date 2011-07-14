@@ -132,5 +132,6 @@
 			});
 			return true;
 		};
+		$(document).trigger("MinTouch_ready");
 	}
 })(jQuery);

@@ -32,7 +32,7 @@ header h1,footer{
 }
 
 button,a[data-type*=button]{
-	border-radius:5px;font-size:18px;border:1px solid #4C4E50;height:23px;line-height:23px;color:white!important;font-size:12px;text-shadow:0 -1px #62666A;margin:7px;padding:2px 5px;text-decoration:none;
+	border-radius:5px;font-size:18px;border:1px solid #4C4E50;line-height:23px;color:white!important;font-size:12px;text-shadow:0 -1px #62666A;margin:7px;padding:2px 5px;text-decoration:none;
 	background:#B1B5BB -webkit-gradient(linear,0 0,0 100%,from(#B1B5BB),to(#6B737E));background:#B1B5BB -moz-linear-gradient(#B1B5BB,#6B737E);background:#B1B5BB -o-linear-gradient(#B1B5BB,#6B737E);background:#B1B5BB linear-gradient(#B1B5BB,#6B737E);-pie-background:#B1B5BB linear-gradient(#B1B5BB,#6B737E);
 }
 
