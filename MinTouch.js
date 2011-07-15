@@ -85,16 +85,16 @@
 						return false;
 					}).trigger("touchmove");
 				}
-				var theaside=$("body>aside:visible").find("article>div");
+				var theaside=$("body>aside:visible").find("article");
 				if(theaside.length==1){
 					this._asideScroller=new iScroll(theaside[0],{
 						checkDOMChanges:false,
 						onBeforeScrollStart:_that._scrollfix
 					});
 				}
-				$("section,aside").bind("MinTouch_open",function(){
+				$("section").bind("MinTouch_open",function(){
 					try{
-						_that._sectionScroller=new iScroll($(this).find("article>div")[0],{
+						_that._sectionScroller=new iScroll($(this).find("article")[0],{
 							checkDOMChanges:false,
 							onBeforeScrollStart:_that._scrollfix
 						});

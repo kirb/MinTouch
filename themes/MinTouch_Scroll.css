@@ -2,12 +2,12 @@
 	.iscroll section,.iscroll aside{
 		position:absolute;top:0;left:0;height:100%;
 	}
-	.iscroll section>article>div,.iscroll aside>article>div{
+	.iscroll section>article,.iscroll aside>article{
 		position:absolute;top:48px;left:0;bottom:48px;right:0;overflow:auto;
 	}
-	.iscroll section>article>div{
+	/*.iscroll section>article{
 		left:300px;
-	}
+	}*/
 	.iscroll section>footer,.iscroll aside>footer{
 		position:absolute;bottom:0;left:0;right:0;overflow:auto;
 	}
