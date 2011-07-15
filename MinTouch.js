@@ -116,7 +116,7 @@
 							_that.params=params;
 							$("section").slideUp().trigger("MinTouch_close");
 							$(locationhash).slideDown().trigger("MinTouch_open");
-							scrollTo(0,"standalone" in navigator&&navigator.standalone?36:16);
+							scrollTo(0,16);
 							document.title=$(locationhash).find("header>h1").text()+options.title;
 						}
 					}
