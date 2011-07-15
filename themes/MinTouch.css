@@ -44,9 +44,6 @@ body>section{
 body>aside{
 	z-index:2;
 }
-body>section>article>div>div,body>aside>article>div>div{
-	padding:8px;
-}
 body>section>header,body>section>article,body>section>footer{
 	margin-left:0;
 }
@@ -56,8 +53,8 @@ section>header,section>footer,aside>header,aside>footer{
 section>header,section>footer,aside>header,aside>footer{
 	text-align:center;
 }
-section>article,aside>article{
-	margin:10px;
+section>article>div,aside>article>div{
+	padding:10px;
 }
 a:link,a:visited{
 	text-decoration:none;color:blue;transition:text-shadow 1s ease;-webkit-transition:text-shadow 1s ease;-moz-transition:text-shadow 1s ease;
@@ -84,5 +81,11 @@ section>header>*,section>footer>*,aside>header>*,aside>footer>*{
 	}
 	body>aside,body>aside>div{
 		left:0;
+	}
+	.noaside>body>aside{
+		display:none;
+	}
+	.noaside>body>section>header,.noaside>body>section>article,.noaside>body>section>footer{
+		margin-left:0;
 	}
 }

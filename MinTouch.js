@@ -91,6 +91,8 @@
 						checkDOMChanges:false,
 						onBeforeScrollStart:_that._scrollfix
 					});
+				}else{
+					$("html").addClass("noaside");
 				}
 				$("section").bind("MinTouch_open",function(){
 					try{
