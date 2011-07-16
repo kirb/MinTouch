@@ -14,7 +14,7 @@
 		window.MinTouch=function(opt){
 			var defaults={
 				theme:"default",
-				webApp:false,
+				webApp:true,
 				icon:null,
 				startup:null,
 				fullViewport:true,
@@ -22,7 +22,9 @@
 				title:" - "+document.title,
 				home:"#mainwindow",
 				debug:false,
-				defaultStyles:true
+				defaultStyles:true,
+				statusBar:"black",
+				iconGloss:true
 			},options=$.extend(defaults,opt),currenttheme=options.theme;
 			this.theme=options.theme;
 			this.params="";
@@ -35,16 +37,13 @@
 			}
 			if(options.fullViewport){
 				$("<meta name=viewport content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0'>").prependTo("head");
-				/*
-				$("<meta name=viewport content='width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=0'>").prependTo("head");
-				$(window).bind("orientationchange",function(){
-					if("orientation" in window&&(orientation==90||orientation==-90)){
-						$("meta[name=viewport]").attr("content","width=device-height,height=device-width,initial-scale=1,maximum-scale=1,user-scalable=0");
-					}else{
-						$("meta[name=viewport]").attr("content","width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=0");
-					}
-				});
-				*/
+			}
+			if(options.webApp){
+				$("<meta name='apple-mobile-web-app-capable' content=yes>").prependTo("head");
+				$("<meta name='apple-mobile-web-app-status-bar-style' content="+(options.statusBar=="white"?"default":"black")+">").prependTo("head");
+			}
+			if(options.icon){
+				$("<link rel='apple-touch-icon"+(options.iconGloss?"":"-precomposed")+"'>").attr("href",options.icon).prependTo("head");
 			}
 			var _that=this;
 			this._scrollfix=function(e){
@@ -80,7 +79,7 @@
 				if("iScroll" in window){
 					$("html").addClass("iscroll");
 					$("html,body").bind("touchmove",function(e){
-						scrollTo(0,"standalone" in navigator&&navigator.standalone?36:16);
+						scrollTo(0,16);
 						e.preventDefault();
 						return false;
 					}).trigger("touchmove");
@@ -116,7 +115,7 @@
 							_that.params=params;
 							$("section").slideUp().trigger("MinTouch_close");
 							$(locationhash).slideDown().trigger("MinTouch_open");
-							scrollTo(0,"standalone" in navigator&&navigator.standalone?36:16);
+							scrollTo(0,16);
 							document.title=$(locationhash).find("header>h1").text()+options.title;
 						}
 					}
@@ -125,9 +124,9 @@
 						$("link[data-mintouchtheme=true]").attr("href",escape(options.themeDir)+escape(_that.theme)+".css"+(options.debug?"?_="+new Date().getTime():""));
 					}
 				},200);
-				$("a,button,img,input,textarea,select,keygen").bind("touchstart",function(){
+				$("a,button,img,input,textarea,select,keygen").bind("touchstart mousedown",function(){
 					$(this).addClass("over");
-				}).bind("touchend",function(){
+				}).bind("touchend mouseup",function(){
 					$(this).removeClass("over");
 				});
 				$("a[data-type*=button],button").prepend("<span></span>").wrapInner("<span></span>");
