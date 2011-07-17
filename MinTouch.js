@@ -28,23 +28,13 @@
 			this.params="";
 			this._sectionScroller=null;
 			this._asideScroller=null;
-			$("<link rel=stylesheet data-mintouchcss=true>").attr("href",escape(options.themeDir)+"MinTouch_Scroll.css"+(options.debug?"?_="+new Date().getTime():"")).prependTo("head");
-			$("<link rel=stylesheet data-mintouchtheme=true>").attr("href",escape(options.themeDir)+escape(this.theme)+".css"+(options.debug?"?_="+new Date().getTime():"")).prependTo("head");
+			$("<link rel=stylesheet data-mintouchcss=true>").attr("href",options.themeDir+"MinTouch_Scroll.css"+(options.debug?"?_="+new Date().getTime():"")).prependTo("head");
+			$("<link rel=stylesheet data-mintouchtheme=true>").attr("href",options.themeDir+escape(this.theme)+".css"+(options.debug?"?_="+new Date().getTime():"")).prependTo("head");
 			if(options.defaultStyles){
-				$("<link rel=stylesheet data-mintouchcss=true>").attr("href",escape(options.themeDir)+"MinTouch.css"+(options.debug?"?_="+new Date().getTime():"")).prependTo("head");
+				$("<link rel=stylesheet data-mintouchcss=true>").attr("href",options.themeDir+"MinTouch.css"+(options.debug?"?_="+new Date().getTime():"")).prependTo("head");
 			}
 			if(options.fullViewport){
 				$("<meta name=viewport content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0'>").prependTo("head");
-				/*
-				$("<meta name=viewport content='width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=0'>").prependTo("head");
-				$(window).bind("orientationchange",function(){
-					if("orientation" in window&&(orientation==90||orientation==-90)){
-						$("meta[name=viewport]").attr("content","width=device-height,height=device-width,initial-scale=1,maximum-scale=1,user-scalable=0");
-					}else{
-						$("meta[name=viewport]").attr("content","width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=0");
-					}
-				});
-				*/
 			}
 			var _that=this;
 			this._scrollfix=function(e){
