@@ -13,7 +13,7 @@
 	}else{
 		window.MinTouch=function(opt){
 			var defaults={
-				theme:"default",
+				theme:"dark",
 				webApp:true,
 				icon:null,
 				startup:null,
@@ -44,6 +44,9 @@
 			}
 			if(options.icon){
 				$("<link rel='apple-touch-icon"+(options.iconGloss?"":"-precomposed")+"'>").attr("href",options.icon).prependTo("head");
+			}
+			if(options.startup){
+				$("<link rel='apple-touch-startup-image'>").attr("href",options.startup).prependTo("head");
 			}
 			var _that=this;
 			this._scrollfix=function(e){

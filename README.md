@@ -1,5 +1,5 @@
 # MinTouch #
-Version 1.1.4
+Version 1.1.4.1
 ## Introduction ##
 Welcome to MinTouch, a mobile Web library for use with jQuery. It features:
 
