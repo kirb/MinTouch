@@ -52,9 +52,9 @@
 			this._scrollfix=function(e){
 				try{
 					var t=e.target;
-					//while(t.nodeType!=1){
-						//t=t.parentNode;
-					//}
+					while(t.nodeType!=1){
+						t=t.parentNode;
+					}
 					var n=target.tagName.toLowerCase();
 					if(n=="select"||n=="input"||n=="textarea"||n=="keygen"){
 						e.preventDefault();
@@ -130,9 +130,9 @@
 						$("link[data-mintouchtheme=true]").attr("href",escape(options.themeDir)+escape(_that.theme)+".css"+(options.debug?"?_="+new Date().getTime():""));
 					}
 				},200);
-				$("a,button,img,input,textarea,select,keygen").bind("touchstart mousedown",function(){
+				$("a,button,img,input,textarea,select,keygen").bind("touchstart",function(){
 					$(this).addClass("over");
-				}).bind("touchend mouseup",function(){
+				}).bind("touchend",function(){
 					$(this).removeClass("over");
 				});
 				$("a[data-type*=button],button").prepend("<span></span>").wrapInner("<span></span>");
