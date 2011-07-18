@@ -52,9 +52,9 @@
 			this._scrollfix=function(e){
 				try{
 					var t=e.target;
-					while(t.nodeType!=1){
-						t=t.parentNode;
-					}
+					//while(t.nodeType!=1){
+						//t=t.parentNode;
+					//}
 					var n=target.tagName.toLowerCase();
 					if(n=="select"||n=="input"||n=="textarea"||n=="keygen"){
 						e.preventDefault();
@@ -82,6 +82,9 @@
 				if("iScroll" in window){
 					$("html").addClass("iscroll");
 					$("html,body").bind("touchmove",function(e){
+						if($("body").width()<800){
+							return true;
+						}
 						scrollTo(0,16);
 						e.preventDefault();
 						return false;
