@@ -1,8 +1,12 @@
-html,body,section,aside,header,article,footer,p,div,span,h1,h2,h3,h4,h5,h6,button,input[type=button],input[type=submit],input[type=reset],a{
+*{
 	user-select:none;
 	-webkit-user-select:none;
 	-webkit-touch-callout:none;
 	-webkit-touch-highlight-color:transparent;
+}
+input,button,select,keygen,textarea{
+	user-select:text;
+	-webkit-user-select:text;
 }
 [data-position=left]{
 	float:left;
