@@ -28,8 +28,8 @@
 			},options=$.extend(defaults,opt),currenttheme=options.theme;
 			this.theme=options.theme;
 			this.params="";
-			this._sectionScroller=null;
-			this._asideScroller=null;
+			this.sectionScroller=null;
+			this.asideScroller=null;
 			$("<link rel=stylesheet data-mintouchcss=true>").attr("href",escape(options.themeDir)+"MinTouch_Scroll.css"+(options.debug?"?_="+new Date().getTime():"")).prependTo("head");
 			$("<link rel=stylesheet data-mintouchtheme=true>").attr("href",escape(options.themeDir)+escape(this.theme)+".css"+(options.debug?"?_="+new Date().getTime():"")).prependTo("head");
 			if(options.defaultStyles){
@@ -88,12 +88,16 @@
 					console.log("hashchange start");
 					hash=location.hash.replace(/(.*),(.*)/,"$1");
 					params=/(.*),(.*)/.test(location.hash)?location.hash.replace(/(.*),(.*)/,"$2"):"";
-					console.log("same hash: "+hash==locationhash,"same params: "+params==locationparams);
+					console.log(hash==locationhash,params==locationparams);
 					if((hash!=locationhash||params!=locationparams)&&($(hash).is("section")&&$(hash).parent().is("body"))){
 						locationhash=hash;
 						locationparams=this.params=params;
-						$("section").slideUp().trigger("MinTouch_close");
-						$(hash).slideDown().trigger("MinTouch_open");
+						$("section").slideUp(1000,function(){
+							$(this).trigger("MinTouch_close");
+						});
+						$(hash).slideDown(1000,function(){
+							$(this).trigger("MinTouch_open");
+						});
 						scrollTo(0,16);
 						document.title=$(locationhash).find("header>h1").text()+options.title;
 					}
@@ -112,16 +116,18 @@
 				}
 				var theaside=$("body>aside:visible").find("article");
 				if(theaside.length==1){
-					this._asideScroller=new iScroll(theaside[0],{
-						checkDOMChanges:false,
-						onBeforeScrollStart:_that._scrollfix
-					});
+					setTimeout(function(){
+						this.asideScroller=new iScroll(theaside[0],{
+							checkDOMChanges:false,
+							onBeforeScrollStart:_that._scrollfix
+						});
+					},100);
 				}else{
 					$("html").addClass("noaside");
 				}
 				$("section").bind("MinTouch_open",function(){
 					try{
-						_that._sectionScroller=new iScroll($(this).find("article")[0],{
+						_that.sectionScroller=new iScroll($(this).find("article")[0],{
 							checkDOMChanges:false,
 							onBeforeScrollStart:_that._scrollfix
 						});
@@ -131,11 +137,13 @@
 					}catch(e){}
 				}).bind("MinTouch_close",function(){
 					try{
-						_that._sectionScroller.destroy();
+						_that.sectionScroller.destroy();
 					}catch(e){}
 				});
 				_that.params=/(.*),(.*)/.test(location.hash)?location.hash.replace(/(.*),(.*)/,"$2"):"";
-				$(locationhash).show().trigger("MinTouch_open");
+				$(locationhash).show(0,function(){
+					$(this).trigger("MinTouch_open");
+				});
 				if("onhashchange" in window){
 					window.addEventListener("hashchange",_that._hashchange,false);
 					document.addEventListener("hashchange",_that._hashchange,false);
