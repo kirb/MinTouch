@@ -4,7 +4,7 @@
  * A mobile web library
  *
  * @author Ad@m
- * @website http://year7stjk.com/mintouch.php
+ * @website http://github.com/kirbylover4000/MinTouch
  * @license Creative Commons Attribution-ShareAlike 3.0 Unported - http://creativecommons.org/licenses/by-sa/3.0/
  */
 (function($){
